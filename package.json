@@ -1,0 +1,17 @@
+{
+  "name": "translate_srt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "YANG WANG",
+  "license": "MIT",
+  "repository": "https://github.com/wangyangwang/translate_srt_llm",
+  "dependencies": {
+    "openai": "^5.20.1"
+  }
+}
