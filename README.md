@@ -1,6 +1,8 @@
-# translate_srt
+> **Note:** This project is half-vibe-coded.
 
-A Node.js tool to translate SRT subtitle files using OpenAI's API.
+# add_translate_srt
+
+A Node.js CLI tool to add a second language line under each original line in an SRT subtitle file using a large language model (LLM).
 
 ## Quick Start
 
@@ -24,7 +26,23 @@ A Node.js tool to translate SRT subtitle files using OpenAI's API.
 - `OPENAI_TIMEOUT_MS` (optional): Timeout in ms (default: 240000).
 
 
-## How SRT File Slicing Works (and How to Improve It)
+
+## How the Prompt Works (and How to Improve It)
+
+**Current behavior:**
+The prompt is designed to create a bilingual SRT file by adding a line of the second language (Chinese) **directly under** each English line. This is intentional and important: the output will always be English, then its translation, line by line, throughout the file.
+
+**Why?**
+This format is useful for language learners and for making subtitles that show both languages together. If you want a different output style (e.g., replace English, or use a different order), you must change the prompt in `app.js` (see the `AI_PROMPT` variable near the top).
+
+**How to improve:**
+- Edit the `AI_PROMPT` string in `app.js` to change the translation style, output format, or add extra instructions.
+- You can experiment with different prompts for other languages, subtitle layouts, or even add formatting.
+
+**Repo name:**
+If you want to focus on bilingual/dual-language subtitles, consider renaming the repo to something like `bilingual-srt` or `srt-bilingualizer` for clarity.
+
+Pull requests for prompt improvements or new output modes are welcome!
 
 This tool splits the input SRT file into chunks for translation by:
 
